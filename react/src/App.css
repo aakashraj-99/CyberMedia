@@ -1,0 +1,135 @@
+/* General application styles */
+.app {
+  font-family: 'Roboto', sans-serif; /* Sets the default font for the entire application */
+  color: #171717; /* Sets the default text color */
+  background-color: #f9e4b7; /* Sets the background color of the application */
+  min-height: 100vh; /* Ensures that the application takes up at least the full height of the viewport */
+  display: flex; /* Uses flexbox layout to organize child elements */
+  flex-direction: column; /* Arranges child elements in a vertical column */
+}
+
+/* Header styles */
+.app-header {
+  background-color: #f9e4b7; /* Sets the background color of the header, matching the app background */
+  padding: 15px; /* Adds padding inside the header for spacing around content */
+  display: flex; /* Uses flexbox to layout header content */
+  justify-content: center; /* Centers the header content (e.g., logo) horizontally */
+  position: fixed; /* Keeps the header positioned at the top of the viewport */
+  top: 0; /* Aligns the header to the top edge of the viewport */
+  left: 0; /* Aligns the header to the left edge of the viewport */
+  width: 100%; /* Ensures the header spans the full width of the viewport */
+  z-index: 1000; /* Sets the stack order, ensuring the header appears above other content */
+}
+
+/* Logo styles */
+.app-logo {
+  height: 60px; /* Specifies the height of the logo */
+}
+
+/* Main chat container styles */
+.chat-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin: 90px auto; /* Adjust if needed to ensure the container is centered with the desired spacing */
+  flex-grow: 1;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative; /* Keeps relative for positioning children */
+}
+
+/* Styles for the container that holds messages */
+.messages-container {
+  position: absolute; /* Positioned absolutely within the .chat-container */
+  top: 35px; /* Starts 50px from the top of the .chat-container to account for header space */
+  bottom: 35px; /* Space from the bottom, accounting for input container space */
+  left: 0;
+  right: 0;
+  padding: 20px;
+  overflow-y: auto; /* Enables scrolling for overflowing content */
+  border-radius: 12px; /* Matching the parent's border-radius */
+}
+
+
+/* Styles for individual messages */
+.message {
+  white-space: pre-wrap;
+  margin: 10px; /* Adds margin around messages for spacing */
+  padding: 10px; /* Adds padding inside messages for spacing around text */
+  border-radius: 12px; /* Applies rounded corners to messages */
+  line-height: 1.5; /* Adjusts the line height for better readability */
+}
+
+/* Styles for messages from the user */
+.message.user {
+  background-color: #0077ff; /* Sets the background color for user messages */
+  color: white; /* Sets the text color for user messages */
+  align-self: flex-end; /* Aligns user messages to the right */
+}
+
+/* Styles for messages from the bot */
+.message.bot {
+  background-color: #f0f0f0; /* Sets the background color for bot messages */
+  align-self: flex-start; /* Aligns bot messages to the left */
+}
+
+/* Styles for the input container */
+.input-container {
+  padding: 10px; /* Adds padding inside the input container for spacing around inputs */
+  background-color: #fafafa; /* Sets the background color for the input container */
+  display: flex; /* Uses flexbox to layout input container content */
+  align-items: center; /* Centers input container content vertically */
+  position: fixed; /* Fixes the position of the input container relative to the viewport */
+  bottom: 20px; /* Positions the input container 50px from the bottom of the viewport */
+  left: 50%; /* Positions the input container in the center of the viewport horizontally */
+  transform: translateX(-50%); /* Adjusts the horizontal position to truly center the container */
+  width: 800px; /* Sets the width of the input container to match the chat container */
+  max-width: 800px; /* Ensures the input container does not exceed 800px in width */
+  border-radius: 12px; /* Applies rounded corners to messages */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+
+/* Styles for input fields */
+.youtube-input,
+.question-input {
+  flex: 1; /* Allows inputs to fill the available space equally */
+  margin-right: 10px; /* Adds spacing to the right of the inputs */
+  padding: 10px; /* Adds padding inside inputs for spacing around text */
+  border: 1px solid #ccc; /* Adds a border around inputs */
+  border-radius: 12px; /* Applies rounded corners to inputs */
+  font-size: 16px; /* Sets the font size for text inside inputs */
+}
+
+/* Styles for the send button */
+.send-button {
+  background-color: #0077ff; /* Sets the background color for the send button */
+  color: white; /* Sets the text color for the send button */
+  border: none; /* Removes any default border */
+  padding: 10px 15px; /* Adds padding inside the send button for spacing around text */
+  border-radius: 12px; /* Applies rounded corners to the send button */
+  cursor: pointer; /* Changes the cursor to indicate the button is clickable */
+  display: flex; /* Uses flexbox to center the button content */
+  align-items: center; /* Centers the button content vertically */
+  justify-content: center; /* Centers the button content horizontally */
+}
+
+/* Styles for the send button on hover */
+.send-button:hover {
+  background-color: #0056b3; /* Changes the background color on hover for a visual feedback */
+}
+
+/* Additional padding for a text-only send button */
+.send-button.text-only {
+  padding: 10px 20px; /* Increases padding for better appearance when using text only */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat-container, .input-container {
+    width: 90%; /* Adjusts the width for smaller screens */
+    margin: 20px auto; /* Adjusts the margin for a better fit on smaller screens */
+  }
+}
